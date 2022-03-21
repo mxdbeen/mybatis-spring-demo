@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.madbeen.repository.IUserRepository">
+
+    <resultMap id="userMap" type="User">
+        <id column="user_id" property="userId" />
+        <result column="user_name" property="userName" />
+        <result column="user_real_name" property="userRealName" />
+        <result column="user_password" property="userPassword" />
+        <result column="user_img" property="userImg" />
+    </resultMap>
+
+    <select id="queryUserByUserName" resultType="User">
+        SELECT * FROM t_user WHERE user_name = #{userName}
+    </select>
+    
+</mapper>
